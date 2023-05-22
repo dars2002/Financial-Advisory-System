@@ -13,13 +13,7 @@ workspace {
             visitor     = person "Visitor"
 
             //Software Platform
-            platform    = softwareSystem "Financial Advisory Platform"{/*
-                //Containers
-                studentApp      = container  "Student App"  "Access to student features"
-                instructorApp   = container "Instructor App"
-                landingPage     = container "Landing Page"
-                webApp          = container "Platform Website"
-                webAPI          = container "Platform API"*/
+            platform    = softwareSystem "Financial Advisory Platform"{
             }
             //RELATIONSHIPS SECTION
 
@@ -28,20 +22,6 @@ workspace {
             user     ->  platform  "Uses"
             consultant  ->  platform  "Uses"
             visitor     ->  platform  "Visits"
-
-            //CONTAINER-TO-CONTAINER RELATIONSHIPS
-            /*landingPage     ->  webApp
-            webApp          ->  webAPI
-            studentApp      ->  webAPI
-            instructorApp   ->  webAPI*/
-
-            //ROLE-TO-CONTAINER RELATIONSHIPS
-            /*user        ->  studentApp    "Uses"
-            user        ->  webApp        "Uses"
-            consultant  ->  instructorApp "Uses"
-            consultant  ->  webApp        "Uses"
-            visitor     ->  landingPage   "Visits"*/
-
         }
         
     }
@@ -58,8 +38,6 @@ workspace {
                 container platform  {
                     //Roles includes
                     include visitor user consultant
-                    //Containers included
-                    /*include studentApp instructorApp landingPage webApp webAPI*/
                     autoLayout
                 }
                 theme default
